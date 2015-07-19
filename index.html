@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Graph</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="./javaScript/graph.js"></script>
+		<script type="text/javascript" src="./javaScript/Node.js"></script>
+		<script type="text/javascript" src="./javaScript/Edge.js"></script>
+		<script type="text/javascript" src="./javaScript/test.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+	</head>
+	<body onload="testAll();">
+		<div > <!-- class="opacityChange" -->
+			<div id="header">
+				<h1>Click To Make Your Graph</h1>
+			</div>
+			<div id="workSpace" onclick="control()" >
+				<!-- <div class="node" ></div> -->
+			</div>
+
+			<div id="footer">
+				<form>
+					Create A : <input type="radio" name="selector" value="node" checked autofocus onclick="labelChange('node')"><label id="nodeSelect" class="userSelect">Node</label>
+					<input type="radio" name="selector" value="edge" onclick="labelChange('edge')"><label id="edgeSelect">Edge</label> 
+					<input type="radio" name="selector" value="start" onclick="labelChange('start')"><label id="startSelect">Start Point</label> 
+					<input type="radio" name="selector" value="end" onclick="labelChange('end')"><label id="endSelect">End Point</label>
+				</form>
+			</div>
+		</div>
+
+		<div id="edgeWeight">
+			<h2>Enter Edge weight</h2><br>
+			<form>
+				<input type="text" name="edgeValue" size="10" maxlenght="6" autofocus>
+				<button type="button" onclick="alert('test')">Set</button>
+			</form>
+		</div>
+	</body>
+</html>
+
