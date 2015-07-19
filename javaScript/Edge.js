@@ -6,6 +6,7 @@ function Edge(node1, node2){
 	this.y1 = node1.y;
 	this.x2 = node2.x;
 	this.y2 = node2.y;
+	this.weight = 5;
 	this.a = Math.abs(this.x1 - this.x2);
 	this.b = Math.abs(this.y1 - this.y2);
 	this.c = Math.sqrt(Math.pow(this.a,2) + Math.pow(this.b,2));
@@ -57,8 +58,12 @@ function Edge(node1, node2){
 	}
 
 	$(this.newEdge).click(function(){
-		alert("edge clicked");
+		alert(this.weight);
 	});
+
+	this.newEdge.onmouseover = function() {
+		alert("str");
+	}
 
 	return this;
 }
