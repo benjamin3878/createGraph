@@ -209,8 +209,6 @@ h1{
 	display: none;
 }
 
-
-
 .opacityChange { 
 	position:fixed;
     top:0;
@@ -220,4 +218,21 @@ h1{
     opacity:0.4;
     /*background-color:#fff;*/
     z-index: 10;
+}
+
+#edgeDisplayBox{
+	background-color: #fff;
+	position: absolute;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: 5px; 
+	z-index: 3;
+	top: 150px;
+	left: 150px;
+	display: none;
+	border-style: solid;
+	border-width: 2px;
+	box-shadow: 5px 5px 3px #555;
 }

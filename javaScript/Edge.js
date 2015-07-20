@@ -12,7 +12,8 @@ function Edge(node1, node2, weight){
 	this.c = Math.sqrt(Math.pow(this.a,2) + Math.pow(this.b,2));
 
 	this.newEdge = document.createElement('div');
-
+	
+	// this.edgeDisplay.innerHTML = weight;
 
 	this.set = function(){
 		edge = $(this.newEdge);
@@ -62,11 +63,20 @@ function Edge(node1, node2, weight){
 		showEdgeInput();
 	});
 
-	this.newEdge.onmouseover = function() {
+	$(this.newEdge).mouseenter (function() {
+
 		if(selected == "edgeSelect"){
- 			
+
+ 			e = $('#edgeDisplayBox');
+ 			e.html(weight);
+ 			e.css("display", "block");
+
+ 			e.css("top", event.clientY);
+ 			e.css("left", event.clientX);
  		}
-	}
+	}).mouseleave(function(){
+		$('#edgeDisplayBox').css("display", "none");
+	})
 
 	return this;
 }
