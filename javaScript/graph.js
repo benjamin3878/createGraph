@@ -1,9 +1,11 @@
 /* Global Vars */
-var selected = "nodeSelect"
+var selected = "nodeSelect";
+var tempSelected = "nodeSelect";
 var nodeArray = new Array();
 var start = null;
 var end = null;
 var node1_edge = null;
+var node2_edge = null;
 /* End of Global Vars */
 
 window.onload = function(){
@@ -60,9 +62,11 @@ function createEdge(){
 			if(node1_edge == null){
 				node1_edge = nodeArray[i];
 			}else{
-				this.edge = new Edge(node1_edge, nodeArray[i]);
-				node1_edge = null;
-				this.edge.set();
+				node2_edge = nodeArray[i];
+				showEdgeInput();
+				// this.edge = new Edge(node1_edge, nodeArray[i]);
+				// addEdge(node1_edge, nodeArray[i]);
+				// node1_edge = null;
 			}		
 			break;
 		};
@@ -117,4 +121,38 @@ function labelChange(value){
 	$("#" + selected ).removeClass("userSelect");
 	$("#" + value + "Select").addClass("userSelect");
 	selected = value + "Select";
+}
+
+/*
+ * when an edge is added, the user input box is displayed 
+ */
+function showEdgeInput(){
+	w = window.innerWidth;
+	h = window.innerHeight;
+	$('#page').addClass("opacityChange");
+	edgeWeight = $('#edgeWeight');
+	edgeWeight.css("display", "block");
+	edgeWeight.css("top", h/2 - 75);
+	edgeWeight.css("left", w/2 - 150);
+	tempSelected = selected;
+	selected = "none"; 
+
+}
+
+function hideEdgeInput(){
+	$('#page').removeClass("opacityChange");
+	$('#edgeWeight').css("display", "none");
+	selected = tempSelected;
+	// weight = document.getElementById("edgeInput").value;
+	weight = $('#edgeInput').val();
+	$('#edgeInput').val("");
+	// console.log(weight);
+	addEdge(weight);
+}
+
+function addEdge(weight){
+	this.edge = new Edge(node1_edge, node2_edge, weight);
+	this.edge.set();
+	node1_edge = null;
+	node2_edge = null;
 }
