@@ -1,6 +1,6 @@
 function testAll(){
-	test1();
-	test2();
+	// test1();
+	// test2();
 	// alert(nodeArray.length);
 }
 //lower right

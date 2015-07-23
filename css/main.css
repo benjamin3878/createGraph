@@ -11,6 +11,8 @@ h1{
 #header{
 	position: fixed;
 	margin-top: 0px;
+	top: 0px;
+	left: 0px;
 	width: 100%;
 	z-index: 4;
 	border-top: solid;
@@ -48,6 +50,74 @@ h1{
 
 #footer label{
 	padding-right: 10px;	
+}
+
+#rightMenu{
+	height: 350px;
+	width: 250px;
+	position: fixed;
+	right: -225px;
+	top: 150px;
+	background-color: #fff;
+	z-index: 12;
+	/*border-radius: 20px;*/
+	border-top-left-radius:2em;
+	border-bottom-left-radius:2em;
+	border-style: solid;
+	border-right: #fff;
+	box-shadow: 10px 10px 5px #555;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+}
+
+#rightMenuLeftBar{
+	margin: 0px;
+	padding: 0px;
+	background-color: red;
+	width: 25px;
+	position: relative;
+	height: 350px;
+	top: -2px;
+	left: 0px;
+	border-top-left-radius:2.1em;
+	border-bottom-left-radius:2.1em;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#rightMenuLeftBar h2{
+	text-align: center;
+	width: 15px;
+	font-size: 30px;
+	word-wrap: break-word;
+}
+
+#rightMenu:hover{
+	/*right: 0px;*/
+	/*-webkit-animation-name: animateRightMenu;
+	-webkit-animation-duration: .4s; 
+    animation-name: animateRightMenu;
+    animation-duration: .4s;
+    animation-timing-function: ease-in-out;*/
+    -webkit-transform: translate(-225px,20px);
+    -moz-transform: translate(-225px,20px);
+    -o-transform: translate(-225px,20px);
+    -ms-transform: translate(-225px,20px);
+
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes animateRightMenu {
+    from {right: -225;}
+    to {right: 0px;}
+}
+
+/* Standard syntax */
+@keyframes animateRightMenu {
+    from {right: -225;}
+    to {right: 0px;}
 }
 
 .userSelect{
@@ -97,10 +167,6 @@ h1{
 	z-index: 1;
 	transform-origin: top left;
 }
-
-/*.edge:hover{
-	z-index: 3;
-}*/
 
 .start{
 	position: absolute;
