@@ -43,22 +43,20 @@ function Edge(node1, node2, weight){
 	this.getAngle = function(c){
 		if(this.x2 >= this.x1 && this.y2 >= this.y1){
 			this.alpha = Math.asin((this.y2-this.y1)/c)*(180.0/Math.PI);
-			// alert("case 1, angle = " + this.alpha);
 		}else if(this.x2 >= this.x1){
 			this.alpha = 360 - Math.asin((this.y1-this.y2)/c)*(180.0/Math.PI);
-			// alert("case 2, angle = " + this.alpha);
 		}else if(this.y2 >= this.y1){
 			this.alpha = 90 + Math.asin((this.x1-this.x2)/c)*(180.0/Math.PI);
-			// alert("case 3, angle = " + this.alpha);
 		}else{
 			this.alpha = 180 + Math.asin((this.y1-this.y2)/c)*(180.0/Math.PI);
-			// alert("case 4, angle = " + this.alpha);
 		}
 		return this.alpha;
 	}
 
 	$(this.newEdge).click(function(){
-		showEdgeInput();
+		// showEdgeInput();
+
+		// $(this.newEdge).addClass('edgeHightlight');
 	});
 
 	$(this.newEdge).mouseenter (function() {

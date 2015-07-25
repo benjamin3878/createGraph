@@ -147,6 +147,11 @@ h1{
 	transform-origin: top left;
 }
 
+.edgeHightlight{
+	background-color: #6699ff;
+	height: 5px;;
+}
+
 .start{
 	position: absolute;
 	color: #fff;
