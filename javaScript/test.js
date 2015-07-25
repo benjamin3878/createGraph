@@ -16,11 +16,11 @@ function test1() {
 	edge3 = new Edge(node1, node4,1);
 	edge4 = new Edge(node1, node5,1);
 	edge5 = new Edge(node1, node6,1);
-	edge1.set();
-	edge2.set();
-	edge3.set();
-	edge4.set();
-	edge5.set();
+	// edge1.set();
+	// edge2.set();
+	// edge3.set();
+	// edge4.set();
+	// edge5.set();
 }
 
 function test2(){
@@ -35,9 +35,9 @@ function test2(){
 	edge3 = new Edge(node1, node4,1);
 	edge4 = new Edge(node1, node5,1);
 	edge5 = new Edge(node1, node6,1);
-	edge1.set();
-	edge2.set();
-	edge3.set();
-	edge4.set();
-	edge5.set();	
+	// edge1.set();
+	// edge2.set();
+	// edge3.set();
+	// edge4.set();
+	// edge5.set();	
 }

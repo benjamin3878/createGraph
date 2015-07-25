@@ -13,19 +13,17 @@ function Edge(node1, node2, weight){
 
 	this.newEdge = document.createElement('div');
 	
-	// this.edgeDisplay.innerHTML = weight;
 
-	this.set = function(){
-		edge = $(this.newEdge);
-		edge.addClass("edge");
-		this.setWidth(this.c);
-		angle = this.getAngle(this.c);
-		this.setRotate(angle); 
-		// offset = Math.sin(angle)*4 + 20;
-		edge.css("top", this.y1 + 20 );
-		edge.css("left", this.x1 + 20 );
-		$('#workSpace').append(this.newEdge);
-	}
+	// this.set = function(){
+	// 	edge = $(this.newEdge);
+	// 	edge.addClass("edge");
+	// 	this.setWidth(this.c);
+	// 	angle = this.getAngle(this.c);
+	// 	this.setRotate(angle); 
+	// 	edge.css("top", this.y1 + 20 );
+	// 	edge.css("left", this.x1 + 20 );
+	// 	$('#workSpace').append(this.newEdge);
+	// }
 
 	this.setRotate = function(degrees){
 		$(this.newEdge).css({
@@ -64,13 +62,10 @@ function Edge(node1, node2, weight){
 	});
 
 	$(this.newEdge).mouseenter (function() {
-
 		if(selected == "edgeSelect"){
-
  			e = $('#edgeDisplayBox');
  			e.html(weight);
  			e.css("display", "block");
-
  			e.css("top", event.clientY);
  			e.css("left", event.clientX);
  		}
@@ -78,5 +73,15 @@ function Edge(node1, node2, weight){
 		$('#edgeDisplayBox').css("display", "none");
 	})
 
+
+	edge = $(this.newEdge);
+	edge.addClass("edge");
+	this.setWidth(this.c);
+	angle = this.getAngle(this.c);
+	this.setRotate(angle); 
+	edge.css("top", this.y1 + 20 );
+	edge.css("left", this.x1 + 20 );
+	$('#workSpace').append(this.newEdge);
+	
 	return this;
 }

@@ -28,7 +28,6 @@ h1{
 	background: -ms-linear-gradient(45deg,  rgba(178,178,178,1) 0%,rgba(14,14,14,1) 100%); /* IE10+ */
 	background: linear-gradient(45deg,  rgba(178,178,178,1) 0%,rgba(14,14,14,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2b2b2', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
 }
 
 #footer{
@@ -60,7 +59,6 @@ h1{
 	top: 150px;
 	background-color: #fff;
 	z-index: 12;
-	/*border-radius: 20px;*/
 	border-top-left-radius:2em;
 	border-bottom-left-radius:2em;
 	border-style: solid;
@@ -95,11 +93,10 @@ h1{
 }
 
 #rightMenu:hover{
-    -webkit-transform: translate(-225px,20px);
-    -moz-transform: translate(-225px,20px);
-    -o-transform: translate(-225px,20px);
-    -ms-transform: translate(-225px,20px);
-
+    -webkit-transform: translate(-225px,0px);
+    -moz-transform: translate(-225px,0px);
+    -o-transform: translate(-225px,0px);
+    -ms-transform: translate(-225px,0px);
 }
 
 .userSelect{
@@ -152,6 +149,7 @@ h1{
 
 .start{
 	position: absolute;
+	color: #fff;
 	top: -5px;
 	left: 5px;
 }
@@ -196,6 +194,7 @@ h1{
 
 .end{
 	position: absolute;
+	color: #fff;
 	top: -5px;
 	left: 7px;
 }

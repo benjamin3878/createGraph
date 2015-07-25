@@ -152,7 +152,7 @@ function hideEdgeInput(){
 
 function addEdge(weight){
 	this.edge = new Edge(node1_edge, node2_edge, weight);
-	this.edge.set();
+	// this.edge.set();
 	node1_edge = null;
 	node2_edge = null;
 }
