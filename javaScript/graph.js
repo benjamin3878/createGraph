@@ -64,27 +64,24 @@ function createEdge(){
 			}else{
 				node2_edge = nodeArray[i];
 				showEdgeInput();
-				// this.edge = new Edge(node1_edge, nodeArray[i]);
-				// addEdge(node1_edge, nodeArray[i]);
-				// node1_edge = null;
 			}		
 			break;
 		};
 	}
-	// alert("x = " + this.x + ", y = " + this.y);
-	// this.edge = new Edge(this.x,this.y, this.x - this.x/2, this.y + this.y/2);
-	// this.edge.set();
 }
 
 /*
- * User choose Start point
+ * User choose Start node
+ * This function finds the node if clciked and updates the css. If the node is already the Start 
+ * or the End node, no action is taken. If there is already an Start node, the newly selected node
+ * becomes the Start node and the old Start node is converted back to a normal node.
  */
 function chooseStart(){
 	this.x = event.clientX;
 	this.y = event.clientY;
 	for (i = 0; i < nodeArray.length; i++) {
 		if (Math.abs(this.x-20-nodeArray[i].x) <= 17 && Math.abs(this.y-20-nodeArray[i].y) <= 17) {
-			if(nodeArray[i] == end){ break;}
+			if(nodeArray[i] == start || nodeArray[i] == end){ break;}
 			nodeArray[i].makeStart();
 			if(start != null){
 				start.removeStart();
@@ -96,14 +93,17 @@ function chooseStart(){
 }
 
 /*
- * User choose End point
+ * User choose End node
+ * This function finds the node if clciked and updates the css. If the node is already the Start 
+ * or the End node, no action is taken. If there is already an End node, the newly selected node
+ * becomes the End node and the old End node is converted back to a normal node.
  */
 function chooseEnd(){
 	this.x = event.clientX;
 	this.y = event.clientY;
 	for (i = 0; i < nodeArray.length; i++) {
 		if (Math.abs(this.x-20-nodeArray[i].x) <= 17 && Math.abs(this.y-20-nodeArray[i].y) <= 17) {
-			if(nodeArray[i] == start){ break;}
+			if(nodeArray[i] == start || nodeArray[i] == end){ break;}
 			nodeArray[i].makeEnd();
 			if(end != null){
 				end.removeEnd();
@@ -139,20 +139,24 @@ function showEdgeInput(){
 
 }
 
+/*
+ * This function hide the edge weight input box when not in use
+ */
 function hideEdgeInput(){
 	$('#page').removeClass("opacityChange");
 	$('#edgeWeight').css("display", "none");
 	selected = tempSelected;
-	// weight = document.getElementById("edgeInput").value;
 	weight = $('#edgeInput').val();
 	$('#edgeInput').val("");
-	// console.log(weight);
 	addEdge(weight);
 }
 
+/*
+ * This function creates the new edge and rest the gloable variables 
+ * holding the two nodes which will be connect by the new edge.
+ */
 function addEdge(weight){
 	this.edge = new Edge(node1_edge, node2_edge, weight);
-	// this.edge.set();
 	node1_edge = null;
 	node2_edge = null;
 }

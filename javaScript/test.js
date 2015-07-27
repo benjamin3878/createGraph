@@ -1,7 +1,19 @@
+goog.require('goog.dom');
+
+goog.require('goog.structs.PriorityQueue');
+
 function testAll(){
-	// test1();
+	test1();
 	// test2();
-	// alert(nodeArray.length);
+	
+	// q = new goog.structs.PriorityQueue();
+	// q.enqueue(1, "one");
+	// q.enqueue(3, "three");
+	// q.enqueue(4, "four");
+	// q.enqueue(2, "two");
+	// for (var i = 0; i < 4; i++) {
+	// 	console.log(q.dequeue());
+	// };
 }
 //lower right
 function test1() {
@@ -16,11 +28,8 @@ function test1() {
 	edge3 = new Edge(node1, node4,1);
 	edge4 = new Edge(node1, node5,1);
 	edge5 = new Edge(node1, node6,1);
-	// edge1.set();
-	// edge2.set();
-	// edge3.set();
-	// edge4.set();
-	// edge5.set();
+
+	node1.addDis('&infin;');
 }
 
 function test2(){
@@ -35,9 +44,5 @@ function test2(){
 	edge3 = new Edge(node1, node4,1);
 	edge4 = new Edge(node1, node5,1);
 	edge5 = new Edge(node1, node6,1);
-	// edge1.set();
-	// edge2.set();
-	// edge3.set();
-	// edge4.set();
-	// edge5.set();	
+
 }

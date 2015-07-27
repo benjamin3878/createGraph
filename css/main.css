@@ -288,3 +288,10 @@ h1{
 	border-width: 2px;
 	box-shadow: 5px 5px 3px #555;
 }
+
+/*.node p{
+
+	text-align: center;
+	position: relative;
+	top: -5px;
+}*/

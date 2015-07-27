@@ -12,18 +12,6 @@ function Edge(node1, node2, weight){
 	this.c = Math.sqrt(Math.pow(this.a,2) + Math.pow(this.b,2));
 
 	this.newEdge = document.createElement('div');
-	
-
-	// this.set = function(){
-	// 	edge = $(this.newEdge);
-	// 	edge.addClass("edge");
-	// 	this.setWidth(this.c);
-	// 	angle = this.getAngle(this.c);
-	// 	this.setRotate(angle); 
-	// 	edge.css("top", this.y1 + 20 );
-	// 	edge.css("left", this.x1 + 20 );
-	// 	$('#workSpace').append(this.newEdge);
-	// }
 
 	this.setRotate = function(degrees){
 		$(this.newEdge).css({
@@ -64,8 +52,8 @@ function Edge(node1, node2, weight){
  			e = $('#edgeDisplayBox');
  			e.html(weight);
  			e.css("display", "block");
- 			e.css("top", event.clientY);
- 			e.css("left", event.clientX);
+ 			e.css("top", event.clientY + 10);
+ 			e.css("left", event.clientX + 10);
  		}
 	}).mouseleave(function(){
 		$('#edgeDisplayBox').css("display", "none");

@@ -2,6 +2,7 @@ function Node(x,y){
 	this.x = x - 20;
 	this.y = y - 20;
 	this.newNode = document.createElement('div');
+	
 
 	$(this.newNode).addClass("node", 0);
 	$(this.newNode).css("top", this.y);
@@ -22,11 +23,16 @@ function Node(x,y){
 		$(this.newNode).append(text);
 	}
 
+	this.addDis = function(dis){
+		text = this.addInner(dis);
+		$(this.newNode).append(text);
+	}
+
 	this.addInner = function(str){
 		child = $(this.newNode).children();
-		if(child.length == 0){
-			// alert("in addInner, child == null");
-		}
+		// if(child.length == 0){
+		// 	alert("in addInner, child == null");
+		// }
 		inner = document.createElement('p');
 		inner.innerHTML = str;
 		return inner;

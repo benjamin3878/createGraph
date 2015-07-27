@@ -3,23 +3,23 @@
 	<head>
 		<title>Graph</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="closure-library/closure/goog/base.js"></script>
 		<script type="text/javascript" src="./javaScript/graph.js"></script>
 		<script type="text/javascript" src="./javaScript/Node.js"></script>
 		<script type="text/javascript" src="./javaScript/Edge.js"></script>
 		<script type="text/javascript" src="./javaScript/test.js"></script>
+		
 		<link rel="stylesheet" type="text/css" href="./css/main.css">
 		<link rel="shortcut icon" href="./img/icon.png" alt="page icon">
 	</head>
 
-	<body onload="testAll();">
-		<div id="page"> <!-- class="opacityChange" -->
+	<body onload="testAll()">
+		<div id="page"> <!-- everything in this tag changes opacity when edge weight entered" -->
 			<div id="header">
 				<h1>Click To Make Your Graph</h1>
 			</div>
-			<div id="workSpace" onclick="control()" >
-				<!-- <div class="node" ></div> -->
-
-				<p id="edgeDisplayBox"><p>
+			<div id="workSpace" onclick="control()" > <!-- Node and edges added here as children -->
+				<div id="edgeDisplayBox"></div>
 			</div>
 
 			<div id="footer">
@@ -31,7 +31,7 @@
 				</form>
 			</div>
 			<div id="rightMenu">
-				<div id="rightMenuLeftBar"><h2>Actions</h2></div>
+				<div id="rightMenuLeftBar"><h2>Actions</h2><p>&infin;</p></div>
 			</div>
 		</div>
 
