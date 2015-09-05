@@ -76,6 +76,7 @@ h1{
 	background-color: red;
 	width: 25px;
 	position: relative;
+	float: left;
 	height: 350px;
 	top: -2px;
 	left: 0px;
@@ -93,10 +94,27 @@ h1{
 }
 
 #rightMenu:hover{
-    -webkit-transform: translate(-225px,0px);
-    -moz-transform: translate(-225px,0px);
-    -o-transform: translate(-225px,0px);
-    -ms-transform: translate(-225px,0px);
+    -webkit-transform: translate(-100px,0px);
+    -moz-transform: translate(-100px,0px);
+    -o-transform: translate(-100px,0px);
+    -ms-transform: translate(-100px,0px);
+    /*225 max translate*/
+}
+
+#rightMenuRightSide{
+	position: relative;
+	
+	/*float: right;*/
+	
+}
+
+#rightMenuRightSide button{
+	padding: 10px;
+	margin: 5px;
+	width: 100px;
+	background-color: #555;
+	color: #fff;	
+	border-radius: 5px;
 }
 
 .userSelect{
@@ -156,7 +174,7 @@ h1{
 	position: absolute;
 	color: #fff;
 	top: -5px;
-	left: 5px;
+	/*left: 5px;*/
 }
 
 .startParent{
@@ -201,7 +219,7 @@ h1{
 	position: absolute;
 	color: #fff;
 	top: -5px;
-	left: 7px;
+	/*left: 7px;*/
 }
 
 .endParent{
@@ -289,9 +307,9 @@ h1{
 	box-shadow: 5px 5px 3px #555;
 }
 
-/*.node p{
+.node p{
 
 	text-align: center;
 	position: relative;
 	top: -5px;
-}*/
+}

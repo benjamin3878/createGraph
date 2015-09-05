@@ -52,8 +52,8 @@ function Edge(node1, node2, weight){
  			e = $('#edgeDisplayBox');
  			e.html(weight);
  			e.css("display", "block");
- 			e.css("top", event.clientY + 10);
- 			e.css("left", event.clientX + 10);
+ 			e.css("top", event.clientY + 10); //offset for mouse pointer
+ 			e.css("left", event.clientX + 10); //offset for mouse pointer
  		}
 	}).mouseleave(function(){
 		$('#edgeDisplayBox').css("display", "none");

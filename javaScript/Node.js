@@ -1,6 +1,10 @@
 function Node(x,y){
 	this.x = x - 20;
 	this.y = y - 20;
+	this.num = nodeArray.length;
+	// console.log(nodeArray.length)
+
+
 	this.newNode = document.createElement('div');
 	
 
@@ -46,6 +50,14 @@ function Node(x,y){
 	this.removeEnd = function(){
 		$(this.newNode).empty();
 		$(this.newNode).removeClass("endParent");
+	}
+
+	this.toString = function(){
+		"node" + this.num; 
+	}
+
+	this.getNum = function(){
+		return this.num;	
 	}
 
 }

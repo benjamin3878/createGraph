@@ -3,7 +3,7 @@ goog.require('goog.dom');
 goog.require('goog.structs.PriorityQueue');
 
 function testAll(){
-	test1();
+	// test1();
 	// test2();
 	
 	// q = new goog.structs.PriorityQueue();
@@ -29,7 +29,7 @@ function test1() {
 	edge4 = new Edge(node1, node5,1);
 	edge5 = new Edge(node1, node6,1);
 
-	node1.addDis('&infin;');
+	// node1.addDis('&infin;');
 }
 
 function test2(){

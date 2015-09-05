@@ -19,7 +19,8 @@
 				<h1>Click To Make Your Graph</h1>
 			</div>
 			<div id="workSpace" onclick="control()" > <!-- Node and edges added here as children -->
-				<div id="edgeDisplayBox"></div>
+				<!-- <div id="edgeDisplayBox"></div> -->
+				<div id="edgeDisplayBox" style="display: none; top: 269px; left: 402px;">2</div>
 			</div>
 
 			<div id="footer">
@@ -31,7 +32,12 @@
 				</form>
 			</div>
 			<div id="rightMenu">
-				<div id="rightMenuLeftBar"><h2>Actions</h2><p>&infin;</p></div>
+				<div id="rightMenuLeftBar"><h2>Actions</h2></div>
+				<div id="rightMenuRightSide">
+					<button type="button" onclick="myClear()">Clear</button>
+					<button type="button" onclick="preset1()">Preset 1</button>
+					<button type="button" onclick="">Path</button>
+				</div>
 			</div>
 		</div>
 
