@@ -4,9 +4,7 @@ function Node(x,y){
 	this.num = nodeArray.length;
 	// console.log(nodeArray.length)
 
-
 	this.newNode = document.createElement('div');
-	
 
 	$(this.newNode).addClass("node", 0);
 	$(this.newNode).css("top", this.y);
@@ -28,6 +26,8 @@ function Node(x,y){
 	}
 
 	this.addDis = function(dis){
+		var dis = dis;
+		$(this.newNode).empty();
 		text = this.addInner(dis);
 		$(this.newNode).append(text);
 	}

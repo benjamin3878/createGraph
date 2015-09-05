@@ -208,6 +208,9 @@ function preset1(){
 	end = nodeArray[nodeArray.length-1];
 	nodeArray[nodeArray.length-1].makeEnd();
 
+	// nodeArray[1].addDis(11);
+	// nodeArray[1].addDis(3);
+
 	addEdge(3, nodeArray[0], nodeArray[1]);
 	addEdge(4, nodeArray[0], nodeArray[2]);
 	addEdge(1, nodeArray[1], nodeArray[2]);
@@ -239,4 +242,8 @@ function preset1(){
 	addEdge(5, nodeArray[13], nodeArray[16]);
 	addEdge(4, nodeArray[14], nodeArray[16]);
 	addEdge(6, nodeArray[15], nodeArray[16]);
+}
+
+function dijkstra(){
+
 }
