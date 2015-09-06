@@ -2,7 +2,7 @@ function Node(x,y){
 	this.x = x - 20;
 	this.y = y - 20;
 	this.num = nodeArray.length;
-	// console.log(nodeArray.length)
+	this.distance = Infinity;
 
 	this.newNode = document.createElement('div');
 
@@ -26,8 +26,15 @@ function Node(x,y){
 	}
 
 	this.addDis = function(dis){
-		var dis = dis;
-		$(this.newNode).empty();
+		if(dis == '&#8734'){
+			this.distance = Infinity;
+		}else{
+			this.distance = dis;
+		}
+		
+		if($(this.newNode).first().html() != '<p class="end">End</p>'){
+			$(this.newNode).empty();
+		}
 		text = this.addInner(dis);
 		$(this.newNode).append(text);
 	}

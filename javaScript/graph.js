@@ -152,9 +152,9 @@ function hideEdgeInput(){
 	$('#page').removeClass("opacityChange");
 	$('#edgeWeight').css("display", "none");
 	selected = tempSelected;
-	weight = $('#edgeInput').val();
+	weight = Number($('#edgeInput').val());
 	$('#edgeInput').val("");
-	addEdge(weight);
+	addEdge(weight, node1_edge, node2_edge);
 }
 
 /*
@@ -162,10 +162,6 @@ function hideEdgeInput(){
  * holding the two nodes which will be connect by the new edge.
  */
 function addEdge(weight, node1, node2){
-	if(node1 == null || node2 == null){
-		node1 = node1_edge;
-		node2 = node2_edge;
-	}
 	this.edge = new Edge(node1, node2, weight);
 	adjacencyMatrix[node1.num][node2.num] = weight;
 	adjacencyMatrix[node2.getNum()][node1.getNum()] = weight;
@@ -173,6 +169,9 @@ function addEdge(weight, node1, node2){
 	node2_edge = null;
 }
 
+/*
+ * This funcation resets the workspace and clears all the data structures
+ */
 function myClear(){
 	adjacencyMatrix = new Array();
 	nodeArray = new Array();
@@ -184,6 +183,9 @@ function myClear(){
 	document.getElementById('workSpace').innerHTML = '<div id="edgeDisplayBox"></div>';
 }
 
+/*
+ * The preset function creates a predefined graph 
+ */
 function preset1(){
 	myClear();
 	createNode(56, 231);
@@ -244,6 +246,71 @@ function preset1(){
 	addEdge(6, nodeArray[15], nodeArray[16]);
 }
 
+/*
+ * Finds the shortest path in the graph from start to end, if one exists.
+ */
 function dijkstra(){
+	if(start == null){
+		return "Choose start node"
+	}
+	var dist = new Array();
+	dist[start.getNum()] = 0;
+	
+	q = new goog.structs.PriorityQueue();
+	q.enqueue(0, start);
 
+	for(i=0; i<nodeArray.length; i++){
+		if(nodeArray[i].getNum() != start.getNum()){
+			dist[nodeArray[i].getNum()] = Number.MAX_VALUE;
+		}
+	}
+	console.log(dist);
+	setNode(0, dist);
 }
+
+/*
+ * Dijkstra helper function. Sets all nodes initial distance to infinity 
+ */
+function setNode(pos, dist){
+	if(nodeArray[pos] != start){
+		nodeArray[pos].addDis('&#8734');
+	}
+
+	if(pos < nodeArray.length - 1){
+		setTimeout(function(){setNode(++pos, dist);}, 50);
+		// setTimeout(function(){alert(pos);}, 1000);
+	}
+
+	if (pos == nodeArray.length - 1) {
+		dijkstraHelp(null, q, [], dist);
+	};
+}
+
+function dijkstraHelp(cur, pQueue, neighor, dist){
+	if(pQueue.isEmpty() && neighor.length == 0){
+		return; //queue is empty, exit algo
+	}else if(neighor.length != 0){
+		//check and update distance
+		f = neighor.pop();
+		alt = dist[cur.getNum()] + adjacencyMatrix[cur.getNum()][f.getNum()]
+
+		if(alt < dist[f.getNum()]){
+			dist[f.getNum()] = alt;
+			f.addDis(alt);
+			pQueue.enqueue(alt, f);
+		}
+		setTimeout(function(){dijkstraHelp(cur, pQueue, neighor, dist);}, 1000);		
+	}else{
+		//add neighors
+		u = pQueue.dequeue();
+		n = []
+		for (i = 0; i < adjacencyMatrix.length; i++) {
+			if(typeof adjacencyMatrix[u.getNum()][i] != 'undefined'){
+				n.push(nodeArray[i]);
+			}
+		};
+		dijkstraHelp(u,pQueue,n, dist);
+	}
+	
+}
+
